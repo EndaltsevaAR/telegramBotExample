@@ -19,16 +19,6 @@ def website(message):
     bot.send_message(message.chat.id, "Перейдите на сайт", reply_markup=markup)
 
 
-@bot.message_handler(commands=["help"])
-def website(message):
-    markup = types.ReplyKeyboardMarkup
-    website = types.KeyboardButton("Сайт")
-    start = types.KeyboardButton("Старт")
-    markup.add(website, start)
-    bot.send_message(message.chat.id, "Помощь в пути", reply_markup=markup)
-
-
-
 @bot.message_handler(content_types=["text"])
 def get_user_text(message):
     if message.text == "hello":
